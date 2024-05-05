@@ -237,7 +237,7 @@ class PPSClient:
         """
         get_logger().debug(f"path: {path}")
 
-        path = Path(path.lstrip("/"))
+        #path = Path(path.lstrip("/"))
         if not path.exists():
             raise HTTPError(status_code=400, reason=f"notebook does not exist: {path}")
 
@@ -281,7 +281,7 @@ class PPSClient:
 
         if config.requirements and not os.path.exists(config.requirements):
             raise HTTPError(status_code=400, reason="requirements file does not exist")
-        
+
         for external_file in config.external_files:
             if not os.path.exists(external_file):
                 raise HTTPError(status_code=400, reason=f'external file {os.path.basename(external_file)} could not be found in the directory of the Jupyter notebook')
