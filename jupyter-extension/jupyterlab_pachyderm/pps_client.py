@@ -238,6 +238,7 @@ class PPSClient:
         get_logger().debug(f"path: {path}")
 
         #path = Path(path.lstrip("/"))
+        path  = Path(path)
         if not path.exists():
             raise HTTPError(status_code=400, reason=f"notebook does not exist: {path}")
 
@@ -258,6 +259,7 @@ class PPSClient:
         get_logger().debug(f"path: {path} | body: {body}")
 
         #path = Path(path.lstrip("/"))
+        path  = Path(path)
         if not path.exists():
             raise HTTPError(status_code=400, reason=f"notebook does not exist: {path}")
 
