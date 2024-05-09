@@ -68,7 +68,7 @@ class PpsConfig:
             raise ValueError("field image not set")
 
         requirements = config.get("requirements")
-        if requirements is not None:
+        if requirements is not None and len(requirements):
             requirements = notebook_path.parent.joinpath(requirements).resolve()
 
         external_files = []
