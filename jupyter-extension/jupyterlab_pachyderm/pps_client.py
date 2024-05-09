@@ -205,6 +205,7 @@ def upload_environment(
         # Upload the new files
         commit.put_file_from_bytes(path="/user_code.py", data=script)
         if config.requirements:
+            print(config)
             with open(config.requirements, "rb") as reqs_file:
                 commit.put_file_from_file(path="/requirements.txt", file=reqs_file)
         for external_file in config.external_files:
